@@ -30,14 +30,14 @@ Follow these steps to set up and run the project on your local machine:
 Start by cloning the repository to your local machine:
 
 ```bash
-https://github.com/devcraftsman13/Dynamic-Number-Matching.git
+git clone https://github.com/devcraftsman13/Dynamic-Number-Matching.git
 ```
 
 ### 2. Navigate to the Project Directory
 Go to the project folder:
 
 ```bash
-cd dynamic-number-matching-game
+cd Dynamic-Number-Matching
 ```
 
 ### 3. Install Dependencies
