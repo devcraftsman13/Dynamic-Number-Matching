@@ -1,50 +1,95 @@
-# React + TypeScript + Vite
+# Dynamic Number Matching Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a dynamic number matching game built using **React**, **TailwindCSS**, and **Context API** to manage the state of the maximum number (`maxNumber`). The game allows users to select a number, and the game board will generate cards based on the selected number. The goal is to match pairs of cards with the same number.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features:
+- User inputs a number, and the game generates matching pairs of cards.
+- Cards are shuffled and displayed face-down.
+- The user attempts to match pairs of cards by selecting them.
+- The game shows the number of turns and allows the user to reset the game at any time.
+- Animations for zooming in on hover and disappearing cards.
 
-## Expanding the ESLint configuration
+## Technologies Used:
+- **React 18**
+- **TailwindCSS**
+- **React Context API**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Prerequisites
 
-- Configure the top-level `parserOptions` property like this:
+Before getting started, ensure that you have the following installed:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- **Node.js** (v20.18.0)
+- **npm** or **yarn**
+
+## Setup and Installation
+
+Follow these steps to set up and run the project on your local machine:
+
+### 1. Clone the Repository
+Start by cloning the repository to your local machine:
+
+```bash
+https://github.com/devcraftsman13/Dynamic-Number-Matching.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 2. Navigate to the Project Directory
+Go to the project folder:
 
+```bash
+cd dynamic-number-matching-game
+```
+
+### 3. Install Dependencies
+Install the required dependencies using npm (or yarn, if preferred):
+
+```bash
+npm install
+```
+
+### 4. Set Up TailwindCSS
+If you don't have **TailwindCSS** set up already, you can follow these steps to integrate it into your React project:
+
+- Create a tailwind.config.js file:
 ```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+module.exports = {
+  content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
+- In your src/index.css (or a similar global CSS file), add the following TailwindCSS directives:
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+### 5. Add TailwindCSS vis PostCSS
+
+Install the necessary dependencies for PostCSS with Tailwind:
+```bash
+npm install -D tailwindcss postcss autoprefixer
+```
+
+Make sure that your postcss.config.js looks like this:
+```js
+module.exports = {
   plugins: {
-    // Add the react plugin
-    react,
+    tailwindcss: {},
+    autoprefixer: {},
   },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+};
 ```
+
+### 6. Running the Development Server
+
+Once everything is set up, you can run the development server to view the game:
+
+```bash
+npm run dev
+```
+This will start the development server and open the game in your default browser at http://localhost:5173.
