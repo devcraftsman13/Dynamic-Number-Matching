@@ -47,45 +47,7 @@ Install the required dependencies using npm (or yarn, if preferred):
 npm install
 ```
 
-### 4. Set Up TailwindCSS
-If you don't have **TailwindCSS** set up already, you can follow these steps to integrate it into your React project:
-
-- Create a tailwind.config.js file:
-```js
-module.exports = {
-  content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-};
-```
-
-- In your src/index.css (or a similar global CSS file), add the following TailwindCSS directives:
-```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
-
-### 5. Add TailwindCSS vis PostCSS
-
-Install the necessary dependencies for PostCSS with Tailwind:
-```bash
-npm install -D tailwindcss postcss autoprefixer
-```
-
-Make sure that your postcss.config.js looks like this:
-```js
-module.exports = {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
-  },
-};
-```
-
-### 6. Running the Development Server
+### 4. Running the Development Server
 
 Once everything is set up, you can run the development server to view the game:
 
